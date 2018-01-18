@@ -13,7 +13,7 @@ namespace auto_luokka
             Auto auto1 = new Auto("Audi", 250);
 
 
-            Auto auto2 = new Auto();
+            Auto auto2 = new Auto("Datsun", 100);
            
 
             Auto autox = new Auto()
@@ -22,13 +22,25 @@ namespace auto_luokka
                 Nopeus = 0
             };
 
+
+           
             autox.KysyTiedot();
-            auto2.KysyTiedot();
+            Console.Clear();
+            
 
-
+            auto1.Kaasu();
             auto1.NäytäTiedot();
-            autox.NäytäTiedot();
+           
+
+            Console.Write("\n");
+           
+            
+            auto2.Jarru();
             auto2.NäytäTiedot();
+
+            Console.Write("\n");
+
+            autox.NäytäTiedot();
 
             Console.ReadLine();
 

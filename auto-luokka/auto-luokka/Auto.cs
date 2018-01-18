@@ -10,7 +10,7 @@ namespace auto_luokka
     {
         //Muuttujat
         public string Merkki;
-        public int Nopeus;
+        public float Nopeus;
 
         //Konstruktori
         public Auto()
@@ -37,13 +37,23 @@ namespace auto_luokka
             Console.WriteLine("Nopeus: ");
             Nopeus = int.Parse(Console.ReadLine());
         }
-            
+        
          public void NäytäTiedot() //tulostaa auton merkin ja nopeuden
          {
             Console.WriteLine("Merkki: " + Merkki);
+
             
             Console.WriteLine("Nopeus: " + Nopeus);
 
          }
+        public float Kaasu() //välittää parametrinaan nopeuden muutoksen ja lisää Auto olion nopeutta tällä muutoksella
+        {
+            return (Nopeus +=50);
+
+        }
+        public float Jarru() //vähentää auton nopeutta 10%
+        {
+            return (Nopeus *= 0.9f);
+        }
     }
 }
