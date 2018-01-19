@@ -10,30 +10,37 @@ namespace firma_luokka
     {
         static void Main(string[] args)
         {
-            Firma firma = new Firma("Hese", "Kerrostie 2", 0201234567, 10000, 9000);
-            Firma firma2 = new Firma("Näkkäri", "Ranskakuja 5", 0207654321, 20000, 17500);
+            Firma firma = new Firma("Hese", "Kerrostie 2", "0201234567", 10000, 1000);
+            Firma firma2 = new Firma("Näkkäri", "Ranskakuja 5", "0207654321", 20000, 10000);
+            Firma firma3 = new Firma(firma2)
+            {
+                Nimi = "Käkkäri",
+                Tulot = 0
+            };
 
-            firma.Tiedot();
-            firma2.Tiedot();
+            Console.Write(firma.Tiedot());
+            Console.Write("\n\n");
+
+            Console.Write(firma2.Tiedot());
+            Console.Write("\n\n");
+
+            Console.Write(firma3.Tiedot());
+            Console.Write("\n\n");
+            
 
             firma.Tulos();
+            firma.MitenMenee();
+            Console.Write("\n\n");
+
             firma2.Tulos();
+            firma2.MitenMenee();
+            Console.Write("\n\n");
+
+            firma3.Tulos();
+            firma3.MitenMenee();
 
             Console.ReadLine();
         }
     }
 }
-/*
 
-Kirjoita luokalle
-oletusmuodostin(parametritön),
-muodostin, joka sisältää kaikki parametrit sekä
-kopiontimuodostin, jolla olio voidaan kopioida.
-Määritä luokalle myös metodi, joka tulojen ja menojen perusteella laskee firman voiton.
-Metodin pitää laskea voitto%=[(tulot - menot)/menot x 100] ja sen perusteella tulostaa tulostaa näytölle viesti, 
-joka kertoo, kuinka hyvin firmalla menee.
-kehnosti, jos voitto on alle 100% suurempi kuin menot
-tyydyttävästi, jos voitto on vähintään 200% suurempi kuin menot
-hyvin, jos voitto on vähintään 300% suurempi kuin menot
-Luo testausohjelmassa oliota Firma-luokasta ja kopioi yksi olio kopiointimuodostimella.
-Luotuasi olioita, kutsu niiden metodi, joka kertoo firman tilanteesta.*/

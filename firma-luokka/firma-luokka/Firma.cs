@@ -11,7 +11,7 @@ namespace firma_luokka
         //Muuttujat
         public string Nimi;
         public string Osoite;
-        public int Puhelin;
+        public string Puhelin;
         public double Tulot;
         public double Menot;
 
@@ -21,9 +21,9 @@ namespace firma_luokka
         {
             Nimi = "Firma";
             Osoite = "Sijainti";
-            Puhelin = 1234560000;
-            Tulot = 10000;
-            Menot = 5000;
+            Puhelin = "Ei tiedossa!";
+            Tulot = 10000.00f;
+            Menot = 5000.00f;
 
         }
 
@@ -39,9 +39,13 @@ namespace firma_luokka
 
         }
 
-        //KopioTapaus
+        //KopioIlmentymä
 
-        public Firma(string nimi, string osoite, int puhelin, double tulot, double menot)
+
+
+
+
+        public Firma(string nimi, string osoite, string puhelin, double tulot, double menot)
         {
             Nimi = nimi;
             Osoite = osoite;
@@ -53,7 +57,7 @@ namespace firma_luokka
 
         public string Tiedot()
         {
-            return $"{Nimi} + {Osoite} + {Puhelin} + {Tulot} + {Menot}";
+            return $"Yritys: {Nimi}\nOsoite: {Osoite}\nPuh. {Puhelin}\nTulot: {Tulot}\nMenot: {Menot} ";
             
         }
             
@@ -64,9 +68,30 @@ namespace firma_luokka
             double tulos = Tulot - Menot;
             double voittoprosentti = ((Tulot - Menot) / Menot * 100);
             
-            
-            Console.WriteLine($"Yrityksen {Nimi} tulos: " + tulos + " ja voitto%: " + voittoprosentti);
+            Console.WriteLine($"Yrityksen {Nimi} tulos: " + "{0:C}", tulos + " ja voitto%: " + voittoprosentti + "% ");
             //tulokseen valuutta ja voittoprosentti näyttämään %arvo yhden desimaalin tarkkuudella
+
+        }
+        public void MitenMenee()
+        {
+            double voittoprosentti = ((Tulot - Menot) / Menot * 100);
+
+            if (voittoprosentti > 100 && voittoprosentti < 200)
+            {
+                Console.Write("Tyydyttävästi menee! ");
+            }
+            else if (voittoprosentti > 200)
+            {
+                Console.Write("Hyvin menee! ");
+            }
+            else if (voittoprosentti < 100)
+            {
+                Console.Write("Kehnosti menee!");
+            }
+            else if (voittoprosentti == 100 & voittoprosentti < 200)
+            {
+                Console.Write("Tyydyttävästi menee!");
+            }
         }
     }
 }
