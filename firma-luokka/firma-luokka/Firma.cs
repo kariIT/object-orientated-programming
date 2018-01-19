@@ -68,8 +68,8 @@ namespace firma_luokka
             double tulos = Tulot - Menot;
             double voittoprosentti = ((Tulot - Menot) / Menot * 100);
             
-            Console.WriteLine($"Yrityksen {Nimi} tulos: " + "{0:C}", tulos + " ja voitto%: " + voittoprosentti + "% ");
-            //tulokseen valuutta ja voittoprosentti näyttämään %arvo yhden desimaalin tarkkuudella
+            Console.WriteLine($"Yrityksen {Nimi} tulos: " + "{0:C}", tulos + "$ ja voitto%: " + voittoprosentti + "% ");
+            
 
         }
         public void MitenMenee()
