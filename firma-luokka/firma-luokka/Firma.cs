@@ -76,7 +76,7 @@ namespace firma_luokka
         {
             double voittoprosentti = ((Tulot - Menot) / Menot * 100);
 
-            if (voittoprosentti > 100 && voittoprosentti < 200)
+            if (voittoprosentti == 100 && voittoprosentti < 200)
             {
                 Console.Write("Tyydyttävästi menee! ");
             }
@@ -88,10 +88,7 @@ namespace firma_luokka
             {
                 Console.Write("Kehnosti menee!");
             }
-            else if (voittoprosentti == 100 & voittoprosentti < 200)
-            {
-                Console.Write("Tyydyttävästi menee!");
-            }
+            
         }
     }
 }
