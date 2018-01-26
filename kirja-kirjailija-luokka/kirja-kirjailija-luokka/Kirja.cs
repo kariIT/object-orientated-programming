@@ -36,7 +36,7 @@ namespace kirja_kirjailija_luokka
         //M
         public void HaeKirja()
         {
-            Console.Write("Hae kirjaa: ");
+            Console.Write(" ");
             string haku = Console.ReadLine();
 
             if (haku == Nimi)
@@ -52,14 +52,28 @@ namespace kirja_kirjailija_luokka
                 Console.Write("Haku epäonnistui.");
         }
 
-        /*public static void VaihdaTeema()
+        public bool HaeKirja2(string haku)
         {
-            
-        }*/
+            if (haku == Nimi)
+                return true;
+            else
+                return false;
+        }
+
+        public void KirjaInfo()
+        {
+            Console.WriteLine("\nKirjan nimi: " + Nimi);
+            Console.WriteLine("Kirjailija: " + Kirjailija);
+            Console.WriteLine("Kustantaja: " + Kustantaja);
+            Console.WriteLine("Hinta: " + Hinta);
+            Console.WriteLine("Teema: " + teemanNimi);
+        }
 
     }
-        
-    
 
-    
 }
+
+
+
+
+
