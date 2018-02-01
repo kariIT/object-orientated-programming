@@ -12,22 +12,21 @@ namespace kirja_kirjailija_luokka
         {
             
 
-            Kirja kirja = new Kirja("Aamu", "Eeli Tamminen", "PV", 5.10, "metsä");
+            Kirja kirja = new Kirja("Aamu", "Eeli Tamminen", "PV", 35.10, "metsä", 35.10);
             
 
-            Kirja kirja1 = new Kirja("Teline", "Johannes", "Petteri", 8.70, "lauta");
+            Kirja kirja1 = new Kirja("Teline", "Johannes", "Petteri", 88.70, "lauta", 88.70);
             
 
-            Kirja kirja2 = new Kirja("Muki", "Eemeli", "Johannes", 15.10, "kahvi");
+            Kirja kirja2 = new Kirja("Muki", "Eemeli", "Johannes", 15.10, "kahvi", 15.10);
             
 
-            Kirja kirja3 = new Kirja("Pöytä", "Kaisa", "HH", 14, "seinä");
+            Kirja kirja3 = new Kirja("Pöytä", "Kaisa", "HH", 14, "seinä", 14);
 
-            //kirja.HaeKirja();
 
             Kirja[] kirjat = new Kirja[4];
             kirjat[0] = kirja;
-            kirjat[1] = new Kirja("Teline", "Johannes", "Petteri", 8.70, "lauta");
+            kirjat[1] = kirja1;
             kirjat[2] = kirja2;
             kirjat[3] = kirja3;
 
@@ -50,7 +49,7 @@ namespace kirja_kirjailija_luokka
                 Console.WriteLine($"{etsittavaKirja.ToUpper()} Kirjaa ei löytynyt!");
 
 
-
+            
 
 
             Console.ReadLine();

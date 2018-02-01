@@ -13,6 +13,7 @@ namespace kirja_kirjailija_luokka
         string Kustantaja;
         double Hinta;
         static string teemanNimi;
+        
 
         //K
         public Kirja()
@@ -20,17 +21,34 @@ namespace kirja_kirjailija_luokka
             Nimi = " ";
             Kirjailija = " ";
             Kustantaja = " ";
-            Hinta = 22;
+            Hinta = 22.22;
             teemanNimi = " ";
+            UusiHinta = 22.22;
         }
 
-        public Kirja(string nimi, string kirjailija, string kustantaja, double hinta, string teemannimi)
+        public Kirja(string nimi, string kirjailija, string kustantaja, double hinta, string teemannimi, double uusihinta)
         {
             Nimi = nimi;
             Kirjailija = kirjailija;
             Kustantaja = kustantaja;
             Hinta = hinta;
             teemanNimi = teemannimi;
+            UusiHinta = uusihinta;
+        }
+
+        public double UusiHinta
+        {
+            get { return Hinta; }
+
+            set
+
+            {
+                if (Hinta > 30)
+                    Hinta = value * 0.9;
+                else
+                   Hinta = value;
+            }
+
         }
 
         //M
@@ -46,6 +64,7 @@ namespace kirja_kirjailija_luokka
                 Console.WriteLine("Kustantaja: " + Kustantaja);
                 Console.WriteLine("Hinta: " + Hinta);
                 Console.WriteLine("Teema: " + teemanNimi);
+                
             }
 
             else
@@ -68,8 +87,19 @@ namespace kirja_kirjailija_luokka
             Console.WriteLine("Hinta: " + Hinta);
             Console.WriteLine("Teema: " + teemanNimi);
         }
-
+         /*   public static string VaihdaTeema
+            {
+                get { return teemanNimi; }
+                set { teemanNimi = value; }
+            }*/
+      
+            
     }
+
+      
+        
+
+    
 
 }
 
