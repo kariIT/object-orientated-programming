@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kirja_kirjailija_luokka
+namespace kirjallisuus
 {
     class Program
     {
@@ -38,7 +38,8 @@ namespace kirja_kirjailija_luokka
             {
                 if (kirjat[i].HaeKirja2(etsittavaKirja))
                 {
-                    Console.WriteLine($"{etsittavaKirja} Kirja löytyi!");
+                    Console.WriteLine($"{etsittavaKirja} Kirja löytyi!\n" +
+                        $"");
                     kirjat[i].KirjaInfo();
                     isKirjaLoytynyt = true;
                     break;
@@ -46,11 +47,20 @@ namespace kirja_kirjailija_luokka
             }
 
             if (!isKirjaLoytynyt)
-                Console.WriteLine($"{etsittavaKirja.ToUpper()} Kirjaa ei löytynyt!");
-
+                Console.WriteLine(
+                    $"{etsittavaKirja.ToUpper()} Kirjaa ei löytynyt!" +
+                    $"\n-------------------------------");
 
             
 
+            Kirjailija Eeli = new Kirjailija("Eeli Tamminen", "01.02.1990", kirja);
+            Kirjailija Johannes = new Kirjailija("Johannes", "06.07.1980", kirja1);
+
+            Eeli.Tiedot();
+            
+            Johannes.Tiedot();
+            
+            
 
             Console.ReadLine();
         }

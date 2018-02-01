@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kirja_kirjailija_luokka
+namespace kirjallisuus
 {
     class Kirja
     {
@@ -64,6 +64,7 @@ namespace kirja_kirjailija_luokka
                 Console.WriteLine("Kustantaja: " + Kustantaja);
                 Console.WriteLine("Hinta: " + Hinta);
                 Console.WriteLine("Teema: " + teemanNimi);
+                Console.WriteLine("\n");
                 
             }
 
@@ -86,6 +87,7 @@ namespace kirja_kirjailija_luokka
             Console.WriteLine("Kustantaja: " + Kustantaja);
             Console.WriteLine("Hinta: " + Hinta);
             Console.WriteLine("Teema: " + teemanNimi);
+            Console.WriteLine("\n------------------------\n");
         }
          /*   public static string VaihdaTeema
             {
