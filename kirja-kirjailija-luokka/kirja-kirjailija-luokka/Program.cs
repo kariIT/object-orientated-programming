@@ -32,8 +32,8 @@ namespace kirja_kirjailija_luokka
             kirjat[3] = kirja3;
 
             Console.WriteLine("======================");
-             // hakufunktio
-            string etsittavaKirja = "Muki";
+            Console.WriteLine("\nHae kirjaa: ");
+            string etsittavaKirja = Console.ReadLine();
             bool isKirjaLoytynyt = false;
             for(int i = 0;i<kirjat.Length;i++)
             {
