@@ -10,11 +10,14 @@ namespace kulkuväline_luokka
     {
         static void Main(string[] args)
         {
-            Kulkuväline kv = new Kulkuväline("Mopo", "Suzuki", 1985, 500);
-            Auto auto = new Auto(2.0, "Avensis", 5);
+            Kulkuväline mopo = new Kulkuväline("Mopo", "Suzuki", 1985, 500);
+            Auto auto = new Auto("Auto", "Toyota", 2001, 4000, 2.0, "Avensis", 5);
+            Auto auto1 = new Auto("Auto", "BMW", 1996, 3500, 3.2, "330", 3);
+           
 
-            Console.WriteLine(kv.Tiedot());
-            Console.WriteLine(auto.Tiedot()+ "\n");
+            Console.WriteLine(mopo.Tiedot());
+            Console.WriteLine(auto.Tiedot());
+            Console.WriteLine(auto1.Tiedot());
             
 
             Console.ReadLine();

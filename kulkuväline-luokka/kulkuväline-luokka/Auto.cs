@@ -19,14 +19,22 @@ namespace kulkuväline_luokka
             Malli = "Ei mallia";
             ovienLkm = 0;
 
+            
+            
+
         }
-        public Auto(double koneenkoko, string malli, int ovienlkm) 
+        public Auto(string tyyppi, string merkki, int vuosimalli, double hinta, double koneenkoko, string malli, int ovienlkm) 
         {
             koneenKoko = koneenkoko;
             Malli = malli;
             ovienLkm = ovienlkm;
 
+            Tyyppi = tyyppi;
+            Merkki = merkki;
+            Vuosimalli = vuosimalli;
+            Hinta = hinta;
+
         }
-        public string Tiedot() => $"\nIskutilavuus: " + koneenKoko + "\nMalli: " + Malli + "\nOvien lukumäärä: " + ovienLkm; 
+        public override string Tiedot() => $"\nTyyppi: " + Tyyppi + "\nMerkki: " + Merkki + "\nMalli: " + Malli + "\nVuosimalli: " + Vuosimalli + "\nMoottorin tilavuus: " + koneenKoko + "\nOvien lukumäärä: " + ovienLkm + "\nHinta: " + Hinta; 
     }
 }

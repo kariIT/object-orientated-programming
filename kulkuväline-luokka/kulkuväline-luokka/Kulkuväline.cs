@@ -8,10 +8,10 @@ namespace kulkuväline_luokka
 {
     class Kulkuväline
     {
-        string Tyyppi;
-        string Merkki;
-        int Vuosimalli;
-        double Hinta;
+        protected string Tyyppi;
+        protected string Merkki;
+        protected int Vuosimalli;
+        protected double Hinta;
 
         public Kulkuväline()
         {
@@ -28,7 +28,7 @@ namespace kulkuväline_luokka
             Hinta = hinta;
         }
 
-        public string Tiedot()
+        public virtual string Tiedot()
         {
             return $"Tyyppi: " + Tyyppi + "\nMerkki: " + Merkki + "\nVuosimalli: " + Vuosimalli + "\nHinta: " + Hinta;
         }
