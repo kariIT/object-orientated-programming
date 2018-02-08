@@ -34,14 +34,23 @@ namespace kulkuväline_luokka
 
         }
         public override string Tiedot() =>
-            $" " +
+            $"" +
             //\nTyyppi: " + Tyyppi + 
             //"\nMerkki: " + Merkki + 
-            "\nMalli: " + Malli +
+            "Malli: " + Malli +
             //"\nVuosimalli: " + Vuosimalli + 
             "\nMoottorin tilavuus: " + koneenKoko +
             "\nOvien lukumäärä: " + ovienLkm;
-            //"\nHinta: " + Hinta
-            
+        //"\nHinta: " + Hinta
+
+        public override string ToString()
+        {
+            return Tiedot();
+        }
+        public override bool Equals(object obj)
+        {
+            return (koneenKoko > ((Auto)obj).koneenKoko);
+        }
+
     }
 }
