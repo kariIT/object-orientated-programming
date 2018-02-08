@@ -8,9 +8,9 @@ namespace kulkuväline_luokka
 {
     class Auto : Kulkuväline
     {
-        double koneenKoko;
-        string Malli;
-        int ovienLkm;
+        protected double koneenKoko;
+        protected string Malli;
+        protected int ovienLkm;
 
         public Auto()
         {
@@ -19,22 +19,29 @@ namespace kulkuväline_luokka
             Malli = "Ei mallia";
             ovienLkm = 0;
 
-            
-            
-
         }
-        public Auto(string tyyppi, string merkki, int vuosimalli, double hinta, double koneenkoko, string malli, int ovienlkm) 
+        public Auto(double koneenkoko, string malli, int ovienlkm) //string tyyppi, string merkki, int vuosimalli, 
+            
         {
             koneenKoko = koneenkoko;
             Malli = malli;
             ovienLkm = ovienlkm;
 
-            Tyyppi = tyyppi;
+           /* Tyyppi = tyyppi;
             Merkki = merkki;
             Vuosimalli = vuosimalli;
-            Hinta = hinta;
+            Hinta = hinta;*/
 
         }
-        public override string Tiedot() => $"\nTyyppi: " + Tyyppi + "\nMerkki: " + Merkki + "\nMalli: " + Malli + "\nVuosimalli: " + Vuosimalli + "\nMoottorin tilavuus: " + koneenKoko + "\nOvien lukumäärä: " + ovienLkm + "\nHinta: " + Hinta; 
+        public override string Tiedot() =>
+            $" " +
+            //\nTyyppi: " + Tyyppi + 
+            //"\nMerkki: " + Merkki + 
+            "\nMalli: " + Malli +
+            //"\nVuosimalli: " + Vuosimalli + 
+            "\nMoottorin tilavuus: " + koneenKoko +
+            "\nOvien lukumäärä: " + ovienLkm;
+            //"\nHinta: " + Hinta
+            
     }
 }
