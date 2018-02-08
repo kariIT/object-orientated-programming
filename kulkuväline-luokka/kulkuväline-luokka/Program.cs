@@ -17,6 +17,10 @@ namespace kulkuväline_luokka
 
             Kulkuväline auto1 = new Kulkuväline("Auto", "BMW", 1996, 4000);
             Auto auto1_ = new Auto(3.2, "330", 3);
+
+            Kulkuväline kuorma_auto = new Kulkuväline("Kuorma-auto", "Scania", 2000, 20000);
+            Auto kuorma_auto_ = new Auto(8.0, "Vabis", 2);
+            Kuorma_auto _kuorma_auto_ = new Kuorma_auto(300, 10);
             
 
             Console.WriteLine(mopo.Tiedot() + "\n");
@@ -29,7 +33,12 @@ namespace kulkuväline_luokka
 
             //Console.WriteLine(auto_.ToString() + "\n");
 
-            Console.WriteLine($"Onko 3.2 suurempi kuin 2.0? {auto1_.Equals(auto_)}");
+            Console.WriteLine($"Onko 3.2 suurempi kuin 2.0? {auto1_.Equals(auto_)}\n");
+
+            Console.WriteLine(kuorma_auto.Tiedot());
+            Console.WriteLine(kuorma_auto_.Tiedot());
+            Console.WriteLine(_kuorma_auto_.LaskeKulutus());
+
 
             Console.ReadLine();
         }
