@@ -8,21 +8,17 @@ namespace rajapinta
         public static List<Product> products = new List<Product>();
         public static List<Customer> customers = new List<Customer>();
 
-        static void Main(string[] args)
+        static void Main()
         {
-           
-            
             GenerateProductData();
-            PrintProductData();
-
+            //PrintProductData();
 
             GenerateCustomerData();
-            PrintCustomerData();
+            //PrintCustomerData();
 
-            products[0].SearchProduct(products, "Product 99");
+            SearchProduct();
 
-             
-            Console.ReadLine();
+            Exit();
 
         }
         public static void GenerateProductData()
@@ -46,16 +42,7 @@ namespace rajapinta
                 
             }
         }
-        public static void GetProductData()
-        {
-            
-
-        }
-
-
-
-
-        
+   
         public static void GenerateCustomerData()
         {
             Random rnd = new Random();
@@ -72,6 +59,29 @@ namespace rajapinta
                 Console.WriteLine(c);
             }
         }
-        
+
+        public static void SearchProduct()
+        {
+            Console.Write("Search products: ");
+            string search = Console.ReadLine();
+
+            products[0].SearchProduct(products, search);
+        }
+        public static void Exit()
+        {
+            Console.WriteLine("\nPress 'Enter' to continue or type 'E' to exit..");
+            string e = Console.ReadLine();
+
+            if (e == "E") { Console.Clear(); }
+            else if (e == "e") { Console.Clear(); }
+            else if (e == "exit") { Console.Clear(); }
+            else if (e == "Exit") { Console.Clear(); }
+
+            else
+            {
+                Console.Clear();
+                Main();
+            }
+        }
     }
 }

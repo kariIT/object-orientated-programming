@@ -48,9 +48,9 @@ namespace rajapinta
             Console.WriteLine("Total: " + total + "\n");
         }
 
-        public void SearchProduct(List<Product> lstProducts, string search)
+        public void SearchProduct(List<Product> listProducts, string search)
         {
-            Product foundData =  lstProducts.Find(p => p.Name.Equals(search));
+            Product foundData =  listProducts.Find(p => p.Name.Equals(search));
             if (foundData == null)
                 Console.WriteLine("Tuotetta ei löytynyt!");
             else
