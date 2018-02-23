@@ -4,7 +4,10 @@ using System.Text;
 
 namespace rajapinta
 {
-    interface IAsiakas
+    interface ICustomer
     {
+        void GetCustomer();
+
+        void CountBonus();
     }
 }

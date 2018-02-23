@@ -26,24 +26,26 @@ namespace rajapinta
 
         public override string ToString()
         {
-            return $"{Name}, {Price}, {Quantity}";
+            return $"{Name}, P: {Price}, Q: {Quantity}";
         }
 
         public void GetProduct()
         {
-            Console.Write("Hae tuotetta: ");
-            string haku = Console.ReadLine();
+            Console.Write("Search products: ");
+            string search = Console.ReadLine();
 
-            if (haku == Name)
-                Console.WriteLine("Haku onnistui.");
+            if (search == Name)
+            {
+                Console.WriteLine("Product found. ");
+            }
             else
-                Console.WriteLine("Haku epäonnistui.");
+                Console.WriteLine("Product not found. ");
         }
 
         public void CountValue()
         {
             double total = Price * Quantity;
-            Console.WriteLine("Total: " + total);
+            Console.WriteLine("Total: " + total + "\n");
         }
         
         

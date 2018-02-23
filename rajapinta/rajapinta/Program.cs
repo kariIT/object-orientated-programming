@@ -6,33 +6,21 @@ namespace rajapinta
     class Program
     {
         public static List<Product> products = new List<Product>();
+        public static List<Customer> customers = new List<Customer>();
 
         static void Main(string[] args)
-        {
+        { 
+            GenerateProductData();
+            PrintProductData();
 
 
-            /* Product product = new Product("Product 1", 10, 1);
-             Product product2 = new Product("Product 2", 10, 5);
-             Product product3 = new Product("Product 3", 20, 2);
-
-             products.Add(product);
-             products.Add(product2);
-             products.Add(product3); */
-
-            //  Console.WriteLine(product.ToString());
-
-            //  product3.CountValue();
-
-            //  product.GetProduct();
-            GenerateData();
-            PrintData();
-           
-
+            GenerateCustomerData();
+            PrintCustomerData();
              
             Console.ReadLine();
 
         }
-        public static void GenerateData()
+        public static void GenerateProductData()
         {
             Random rnd = new Random();
             for (int i = 0; i < 1000; i++)
@@ -40,12 +28,44 @@ namespace rajapinta
                 products.Add(new Product("Product "+i, rnd.Next(5, 50), rnd.Next(1, 10)));
             }  
         }
-        public static void PrintData()
+
+        public static void PrintProductData()
         {
             foreach (var p in products)
             {
                 Console.WriteLine(p.ToString());
+                
+                {
+                    p.CountValue();
+                }
+                
             }
         }
+        public static void GetProductData()
+        {
+            
+        }
+
+
+
+
+        
+        public static void GenerateCustomerData()
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < 200; i++)
+            {
+                customers.Add(new Customer ("Customer " + i, "Product "+rnd.Next(1, 1000)));
+            }
+        }
+
+        public static void PrintCustomerData()
+        {
+            foreach (var c in customers)
+            {
+                Console.WriteLine(c);
+            }
+        }
+        
     }
 }
