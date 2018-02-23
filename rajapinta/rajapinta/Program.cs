@@ -9,13 +9,18 @@ namespace rajapinta
         public static List<Customer> customers = new List<Customer>();
 
         static void Main(string[] args)
-        { 
+        {
+           
+            
             GenerateProductData();
             PrintProductData();
 
 
             GenerateCustomerData();
             PrintCustomerData();
+
+            products[0].SearchProduct(products, "Product 1000");
+
              
             Console.ReadLine();
 
@@ -44,6 +49,7 @@ namespace rajapinta
         public static void GetProductData()
         {
             
+
         }
 
 

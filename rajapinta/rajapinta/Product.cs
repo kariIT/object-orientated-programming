@@ -47,6 +47,16 @@ namespace rajapinta
             double total = Price * Quantity;
             Console.WriteLine("Total: " + total + "\n");
         }
+
+        public void SearchProduct(List<Product> lstProducts, string search)
+        {
+            Product foundData =  lstProducts.Find(p => p.Name.Equals(search));
+            if (foundData == null)
+                Console.WriteLine("Tuotetta ei löytynyt!");
+            else
+                Console.WriteLine($"Tuote löytyi!\n" +
+                    $"{foundData.ToString()}");
+        }
         
         
     }

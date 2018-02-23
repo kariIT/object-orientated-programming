@@ -9,6 +9,8 @@ namespace rajapinta
         void GetProduct();
 
         void CountValue();
+
+        void SearchProduct(List<Product> lstProduct, string search);
       
     }
 }
