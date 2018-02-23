@@ -19,7 +19,7 @@ namespace rajapinta
             GenerateCustomerData();
             PrintCustomerData();
 
-            products[0].SearchProduct(products, "Product 1000");
+            products[0].SearchProduct(products, "Product 99");
 
              
             Console.ReadLine();
