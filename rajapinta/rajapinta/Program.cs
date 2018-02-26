@@ -17,6 +17,8 @@ namespace rajapinta
             //PrintCustomerData();
 
             SearchProduct();
+            SearchCustomer();
+            
 
             Exit();
 
@@ -48,7 +50,7 @@ namespace rajapinta
             Random rnd = new Random();
             for (int i = 0; i < 200; i++)
             {
-                customers.Add(new Customer ("Customer " + i, "Product "+rnd.Next(1, 1000)));
+                customers.Add(new Customer ("Customer "+i, "Product "+rnd.Next(1, 1000)));
             }
         }
 
@@ -82,6 +84,13 @@ namespace rajapinta
                 Console.Clear();
                 Main();
             }
+        }
+        public static void SearchCustomer()
+        {
+            Console.Write("Search customers: ");
+            string search = Console.ReadLine();
+
+            customers[0].SearchCustomer(customers, search);
         }
     }
 }

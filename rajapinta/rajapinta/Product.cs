@@ -52,9 +52,9 @@ namespace rajapinta
         {
             Product foundData =  listProducts.Find(p => p.Name.Equals(search));
             if (foundData == null)
-                Console.WriteLine("Tuotetta ei löytynyt!");
+                Console.WriteLine("Product not found.");
             else
-                Console.WriteLine($"Tuote löytyi!\n" +
+                Console.WriteLine($"Product found.\n" +
                     $"{foundData.ToString()}");
         }
         

@@ -31,7 +31,7 @@ namespace rajapinta
             if (search == Name)
             {
                 Console.WriteLine("Customer found. ");
-               // Console.WriteLine("Name: " + Name + "Purchases: " + Purchases);
+                Console.WriteLine("Name: " + Name + "\nPurchases: " + Purchases);
             }   
             else
                 Console.WriteLine("Customer not found. ");
@@ -39,6 +39,15 @@ namespace rajapinta
         public void CountBonus()
         {
 
+        }
+        public void SearchCustomer(List<Customer> listCustomers, string search)
+        {
+            Customer foundData = listCustomers.Find(c => c.Name.Equals(search));
+            if (foundData == null)
+                Console.WriteLine("Customer not found. ");
+            else
+                Console.WriteLine($"Customer found\n" + 
+                    $"{foundData.ToString()}");
         }
 
     }
