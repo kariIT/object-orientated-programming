@@ -7,21 +7,21 @@ namespace rajapinta
     class Customer : ICustomer
     {
         string Name;
-        string Purchases;
+        double Purchases;
 
         public Customer()
         {
             Name = "Masa";
-            Purchases = "Product i";
+            Purchases = 0;
         }
-        public Customer(string name, string purchases)
+        public Customer(string name, double purchases)
         {
             Name = name;
             Purchases = purchases;
         }
         public override string ToString()
         {
-            return $"{Name} = {Purchases}";
+            return $"{Name}, {Purchases}";
         }
         public void GetCustomer()
         {
@@ -38,7 +38,22 @@ namespace rajapinta
         }
         public void CountBonus()
         {
-
+            double total;
+            if (Purchases <= 1000)
+            {
+                total = Purchases * 0.02;
+                Console.WriteLine($"Bonus = 2%: {total}");
+            }
+            else if (Purchases > 1000 && Purchases < 2000)
+            {
+                total = Purchases * 0.03;
+                Console.WriteLine($"Bonus = 3%: {total}");
+            }
+            else
+            {
+                total = Purchases * 0.05;
+                Console.WriteLine($"Bonus = 5%: {total}");
+            }
         }
         public void SearchCustomer(List<Customer> listCustomers, string search)
         {
