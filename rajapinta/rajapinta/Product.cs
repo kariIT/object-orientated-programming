@@ -23,7 +23,6 @@ namespace rajapinta
             Price = price;
             Quantity = quantity;
         }
-
         public override string ToString()
         {
             return $"{Name}, P: {Price}, Q: {Quantity}";
@@ -41,23 +40,20 @@ namespace rajapinta
             else
                 Console.WriteLine("Product not found. ");
         }
-
         public void CountValue()
         {
             double total = Price * Quantity;
             Console.WriteLine("Total: " + total + "\n");
         }
 
-        public void SearchProduct(List<Product> listProducts, string search)
+        public void SearchProduct(List<Product> products, string search)
         {
-            Product foundData =  listProducts.Find(p => p.Name.Equals(search));
+            Product foundData =  products.Find(p => p.Name.Equals(search));
             if (foundData == null)
                 Console.WriteLine("Product not found.");
             else
                 Console.WriteLine($"Product found.\n" +
                     $"{foundData.ToString()}");
-        }
-        
-        
+        }      
     }
 }

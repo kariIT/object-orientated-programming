@@ -23,6 +23,7 @@ namespace rajapinta
         {
             return $"{Name}, {Purchases}";
         }
+
         public void GetCustomer()
         {
             Console.WriteLine("Type customer name: ");
@@ -42,28 +43,28 @@ namespace rajapinta
             if (Purchases <= 1000)
             {
                 total = Purchases * 0.02;
-                Console.WriteLine($"Bonus = 2%: {total}");
+                Console.WriteLine($"{Name}, Bonus 2%: {total}");
             }
             else if (Purchases > 1000 && Purchases < 2000)
             {
                 total = Purchases * 0.03;
-                Console.WriteLine($"Bonus = 3%: {total}");
+                Console.WriteLine($"{Name}, Bonus 3%: {total}");
             }
             else
             {
                 total = Purchases * 0.05;
-                Console.WriteLine($"Bonus = 5%: {total}");
+                Console.WriteLine($"{Name}, Bonus 5%: {total}");
             }
         }
-        public void SearchCustomer(List<Customer> listCustomers, string search)
+
+        public void SearchCustomer(List<Customer> customers, string search)
         {
-            Customer foundData = listCustomers.Find(c => c.Name.Equals(search));
+            Customer foundData = customers.Find(c => c.Name.Equals(search));
             if (foundData == null)
                 Console.WriteLine("Customer not found. ");
             else
                 Console.WriteLine($"Customer found\n" + 
                     $"{foundData.ToString()}");
         }
-
     }
 }

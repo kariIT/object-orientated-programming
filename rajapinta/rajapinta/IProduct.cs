@@ -10,7 +10,7 @@ namespace rajapinta
 
         void CountValue();
 
-        void SearchProduct(List<Product> lstProduct, string search);
+        void SearchProduct(List<Product> products, string search);
       
     }
 }

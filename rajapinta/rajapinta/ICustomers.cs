@@ -6,7 +6,7 @@ namespace rajapinta
 {
     interface ICustomers
     {
-        void AddCustomers(Customer customer);
+        void AddCustomers(List<Customer> customer);
 
         void PrintCustomers();
     }

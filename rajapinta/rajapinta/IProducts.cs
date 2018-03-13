@@ -6,7 +6,7 @@ namespace rajapinta
 {
     interface IProducts
     {
-        void AddProduct(Product product);
+        void AddProducts(List<Product> product);
 
         void PrintProducts();
     }
