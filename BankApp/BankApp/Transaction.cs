@@ -16,6 +16,11 @@ namespace BankApp
             Sum = sum;
         }
 
+        public Transaction(double sum)
+        {
+            Sum = sum;
+        }
+
         public double Sum { get => _sum; set => _sum = value; }
     }
 }

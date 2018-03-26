@@ -29,8 +29,17 @@ namespace BankApp
             bank.AddTransaction(customers[0].AccountNumber, new Transaction(new DateTime(2017, 01, 11), 120));
             bank.AddTransaction(customers[1].AccountNumber, new Transaction(new DateTime(2016, 03, 12), 100000));
             bank.AddTransaction(customers[2].AccountNumber, new Transaction(new DateTime(2016, 12, 03), 5000));
-            bank.AddTransaction(customers[1].AccountNumber, new Transaction(new DateTime(2015, 07, 05), -2525));
+            bank.AddTransaction(customers[1].AccountNumber, new Transaction(new DateTime(2015, 07, 05), -2500));
+            //randomtransactions 
+            /*
+            for (int i = 0; i < 20; i++)
+            {
+                Random rnd = new Random();
 
+                bank.AddTransaction(customers[rnd.Next(0, 2)].AccountNumber,
+                    new Transaction(rnd.Next(-10000, 20000)));
+                new DateTime(rnd.Next(2015, 2018), rnd.Next(1, 12), rnd.Next(1, 28));
+            }   */
 
             void PrintBalance(Bank b, Customer customer)
             {
@@ -57,17 +66,18 @@ namespace BankApp
 
                 for (int i = 0; i < transactions.Count(); i++)
                 {
-                    Console.WriteLine("{0}\t{1}{2:0.00}",
+                    Console.WriteLine("{0}\t{2:0.00}",
                         transactions[i].Timestamp.ToShortDateString(),
                         transactions[i].Sum >= 0 ? "+" : "\n",
                         transactions[i].Sum);
                 }
             }
+
             //timevariables
             var endTime = DateTime.Today;
             var time = new TimeSpan(24 * 30 * 6, 0, 0);
             //var startTime = endTime - time;
-            var startTime = DateTime.MinValue;
+            var startTime = new DateTime(2015, 01, 01);
 
             PrintTransactions(bank.GetTransactionsForCustomerForTimeSpan(customers[0].AccountNumber, startTime, endTime), customers[0]);
             PrintTransactions(bank.GetTransactionsForCustomerForTimeSpan(customers[1].AccountNumber, startTime, endTime), customers[1]);
