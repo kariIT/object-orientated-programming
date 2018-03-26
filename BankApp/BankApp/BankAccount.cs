@@ -11,12 +11,12 @@ namespace BankApp
         private List<Transaction> _transactions;
         private double _balance;
 
+        //constructor
         public BankAccount(string accountNumber)
         {
             _accountNumber = accountNumber;
             _transactions = new List<Transaction>();
         }
-
         public BankAccount()
         {
             _accountNumber = "FI01 2345 6789 0000";
@@ -37,6 +37,7 @@ namespace BankApp
 
         public double Balance { get => _balance; set => _balance = value; }
 
+        //methods
         public bool AddTransaction(Transaction transaction)
         {
             bool res = false;

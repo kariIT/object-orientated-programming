@@ -12,6 +12,7 @@ namespace BankApp
 
         public string AccountNumber { get => _accountNumber; set => _accountNumber = value; }
 
+        //constructor
         public Customer()
         {
             FirstName = "Undefined";
@@ -24,6 +25,8 @@ namespace BankApp
             LastName = lastname;
             _accountNumber = accountnumber;
         }
+
+        //methods
         public override string ToString()
         {
             return $"{FirstName}, {LastName}, {_accountNumber}.";

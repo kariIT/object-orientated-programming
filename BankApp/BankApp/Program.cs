@@ -30,30 +30,12 @@ namespace BankApp
             bank.AddTransaction(customers[1].AccountNumber, new Transaction(new DateTime(2016, 03, 12), 100000));
             bank.AddTransaction(customers[2].AccountNumber, new Transaction(new DateTime(2016, 12, 03), 5000));
             bank.AddTransaction(customers[1].AccountNumber, new Transaction(new DateTime(2015, 07, 05), -2500));
-            //randomtransactions 
-            /*
-            for (int i = 0; i < 20; i++)
-            {
-                Random rnd = new Random();
-
-                bank.AddTransaction(customers[rnd.Next(0, 2)].AccountNumber,
-                    new Transaction(rnd.Next(-10000, 20000)));
-                new DateTime(rnd.Next(2015, 2018), rnd.Next(1, 12), rnd.Next(1, 28));
-            }   */
 
             void PrintBalance(Bank b, Customer customer)
             {
                 var balance = bank.GetBalance(customer.AccountNumber);
                 Console.WriteLine("{0} balance: {1}{2:0.00}",
                     customer.ToString(), balance >= 0 ? "+" : "", balance);
-                /*
-                if (balance >= 0)
-                {
-                    Console.WriteLine($"{customer}+{balance:F}");
-                }
-                //else
-                   // Console.WriteLine($"{customer}-{balance:F}");
-                   */
             }
 
             PrintBalance(bank, customers[0]);
@@ -74,10 +56,8 @@ namespace BankApp
             }
 
             //timevariables
-            var endTime = DateTime.Today;
-            var time = new TimeSpan(24 * 30 * 6, 0, 0);
-            //var startTime = endTime - time;
             var startTime = new DateTime(2015, 01, 01);
+            var endTime = DateTime.Today;
 
             PrintTransactions(bank.GetTransactionsForCustomerForTimeSpan(customers[0].AccountNumber, startTime, endTime), customers[0]);
             PrintTransactions(bank.GetTransactionsForCustomerForTimeSpan(customers[1].AccountNumber, startTime, endTime), customers[1]);

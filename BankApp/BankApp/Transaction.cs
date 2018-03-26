@@ -10,12 +10,12 @@ namespace BankApp
         public DateTime Timestamp { get; }
         private double _sum;
 
+        //constructor
         public Transaction(DateTime timestamp, double sum)
         {
             Timestamp = timestamp;
             Sum = sum;
         }
-
         public Transaction(double sum)
         {
             Sum = sum;

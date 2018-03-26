@@ -10,6 +10,7 @@ namespace BankApp
         private string _name;
         private List<BankAccount> _accounts;
 
+        //constructor
         public Bank(string name)
         {
             _name = name;
@@ -26,6 +27,7 @@ namespace BankApp
             _accounts = accounts;
         }
 
+        //methods
         public string CreateAccount()
         {
             Random rnd = new Random();
@@ -37,19 +39,10 @@ namespace BankApp
             _accounts.Add(new BankAccount(rndAccount));
             return rndAccount;
         }
-        public void GetTransactions()
-        {
-
-        }
-        public void GetTransactionsTimeSpan()
-        {
-            
-        }
         public double GetBalance(string accountNumber)
         {
             return (_accounts.Where(account => account.AccountNumber == accountNumber)).FirstOrDefault().Balance;
         }
-
         public bool AddTransaction(string accountnumber, Transaction transaction)
         {
             return (from account in _accounts
