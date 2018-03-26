@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace BankApp
 {
     class Transaction
     {
-        string Timestamp;
-        double Amount;
+        public DateTime Timestamp { get; }
+        private double _sum;
 
-        public Transaction()
+        public Transaction(DateTime timestamp, double sum)
         {
-            Timestamp = "DDMMYYYYHHMMSS";
-            Amount = 0;
+            Timestamp = timestamp;
+            Sum = sum;
         }
+
+        public double Sum { get => _sum; set => _sum = value; }
     }
 }
